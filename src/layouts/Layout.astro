@@ -1,0 +1,196 @@
+---
+import { Font } from 'astro:assets';
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const { title, description = 'Briggs Electric — master electrician serving Pittsburgh since 2001. Swimming pools, outdoor living, generators, landscape lighting, and more.', canonical, ogImage = '/images/og-default.jpg' } = Astro.props;
+const currentPath = Astro.url.pathname;
+const siteUrl = 'https://briggs-electric.keithkelly.dev';
+const canonicalUrl = canonical || `${siteUrl}${currentPath}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Briggs Electric" />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+
+    <Font cssVariable="--font-display" preload />
+    <Font cssVariable="--font-body" preload />
+    <ClientRouter />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+    <!-- Header -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a href="/" class="header-logo">
+          Briggs Electric
+        </a>
+
+        <nav class="header-nav" aria-label="Main navigation">
+          <a href="/" aria-current={currentPath === '/' ? 'page' : undefined}>Home</a>
+          <a href="/services" aria-current={currentPath === '/services/' || currentPath === '/services' ? 'page' : undefined}>Services</a>
+          <a href="/about" aria-current={currentPath === '/about/' || currentPath === '/about' ? 'page' : undefined}>About</a>
+          <a href="/contact" aria-current={currentPath === '/contact/' || currentPath === '/contact' ? 'page' : undefined}>Contact</a>
+          <a href="tel:4124984979" class="header-cta">412-498-4979</a>
+        </nav>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="tel:4124984979" class="mobile-phone">412-498-4979</a>
+    </nav>
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Briggs Electric</div>
+          <p class="footer-tagline">Master electrician since 2001. Transforming Pittsburgh homes and businesses with expert electrical work.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Services</div>
+          <div class="footer-links">
+            <a href="/services#pools">Swimming Pools</a>
+            <a href="/services#outdoor">Outdoor Living</a>
+            <a href="/services#generators">Generators</a>
+            <a href="/services#lighting">Landscape Lighting</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Company</div>
+          <div class="footer-links">
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Contact</div>
+          <div class="footer-links">
+            <a href="tel:4124984979">412-498-4979</a>
+            <a href="mailto:briggs.electric@yahoo.com">Email Us</a>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Bridgeville, PA 15017</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; {new Date().getFullYear()} Briggs Electric. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61556533050294" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/briggselectricpgh/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      document.documentElement.classList.add('js-ready');
+      document.addEventListener('astro:page-load', function() {
+        // Header scroll behavior
+        var header = document.getElementById('site-header');
+        if (!header) return;
+
+        function onScroll() {
+          if (window.scrollY > 60) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }
+
+        // Remove previous listener if any (prevent duplicates)
+        if (window._briggsScrollHandler) {
+          window.removeEventListener('scroll', window._briggsScrollHandler);
+        }
+        window._briggsScrollHandler = onScroll;
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        // Mobile menu
+        var toggle = document.getElementById('mobile-toggle');
+        var mobileNav = document.getElementById('mobile-nav');
+        if (!toggle || !mobileNav) return;
+
+        // Reset mobile menu state on page change
+        toggle.classList.remove('open');
+        mobileNav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+
+        // Clone to remove old listeners
+        var newToggle = toggle.cloneNode(true);
+        toggle.parentNode.replaceChild(newToggle, toggle);
+
+        newToggle.addEventListener('click', function() {
+          var isOpen = newToggle.classList.toggle('open');
+          mobileNav.classList.toggle('open');
+          newToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        // Close mobile nav on link click
+        mobileNav.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            newToggle.classList.remove('open');
+            mobileNav.classList.remove('open');
+            newToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          });
+        });
+
+        // Reveal on scroll (IntersectionObserver)
+        var reveals = document.querySelectorAll('.reveal:not(.visible)');
+        if (reveals.length) {
+          var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                io.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+          reveals.forEach(function(el) { io.observe(el); });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,401 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import poolNightImg from '../assets/images/landscape-pool-night-lighting.jpg';
+import davisFirepitImg from '../assets/images/davis-firepit-gazebo.jpg';
+import generatorImg from '../assets/images/generator.jpg';
+import landscapeLightingImg from '../assets/images/landscape-lighting-house.png';
+import heaterImg from '../assets/images/heater.jpg';
+import bucketTruckImg from '../assets/images/bucket-truck.png';
+import irScanImg from '../assets/images/ir-scan.jpg';
+import excavatorImg from '../assets/images/excavator.jpg';
+import pipesUtilityImg from '../assets/images/pipes-utility.jpg';
+---
+
+<Layout title="Services | Briggs Electric — Pittsburgh, PA" description="Full-service electrical contractor: swimming pools, outdoor living, generators, landscape lighting, bucket truck, thermal imaging, excavation, and utility tracing.">
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Services</span>
+      <h1>Everything runs<br />on electricity.<br />We run it right.</h1>
+    </div>
+  </section>
+
+  <!-- Pools -->
+  <section class="service-detail" id="pools">
+    <div class="container">
+      <div class="detail-split">
+        <div class="detail-media reveal">
+          <Image src={poolNightImg} alt="Swimming pool with underwater lighting and landscape lighting at night" width={800} height={533} loading="lazy" layout="constrained" />
+        </div>
+        <div class="detail-content reveal reveal-delay-2">
+          <span class="detail-number" aria-hidden="true">01</span>
+          <h2>Swimming Pools &amp; Hot Tubs</h2>
+          <p>From standard wiring to advanced Pentair automated pool and spa controls, we handle every part of the electrical work. That includes the gas connections for your pool heater.</p>
+          <ul class="detail-list">
+            <li>Pool pump and filter wiring</li>
+            <li>Pentair automation systems</li>
+            <li>Underwater and perimeter lighting</li>
+            <li>Hot tub electrical connections</li>
+            <li>Gas heater installations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outdoor Living -->
+  <section class="service-detail service-detail--alt" id="outdoor">
+    <div class="container">
+      <div class="detail-split detail-split--reverse">
+        <div class="detail-media reveal">
+          <Image src={davisFirepitImg} alt="Outdoor living space with fire bowls, gazebo, and pool at dusk" width={800} height={533} loading="lazy" layout="constrained" />
+        </div>
+        <div class="detail-content reveal reveal-delay-2">
+          <span class="detail-number" aria-hidden="true">02</span>
+          <h2>Outdoor Living Spaces</h2>
+          <p>Custom lighting and entertainment wiring that takes your daytime backyard and turns it into a nighttime retreat. Gazebo lighting, fire features, outdoor audio, TV mounting.</p>
+          <ul class="detail-list">
+            <li>Gazebo and patio lighting</li>
+            <li>Fire pit and fire bowl wiring</li>
+            <li>Outdoor entertainment systems</li>
+            <li>Pergola and deck lighting</li>
+            <li>Landscape accent lighting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Generators -->
+  <section class="service-detail" id="generators">
+    <div class="container">
+      <div class="detail-split">
+        <div class="detail-media reveal">
+          <Image src={generatorImg} alt="Generac whole-home generator installation" width={800} height={533} loading="lazy" layout="constrained" />
+        </div>
+        <div class="detail-content reveal reveal-delay-2">
+          <span class="detail-number" aria-hidden="true">03</span>
+          <h2>Generator Services</h2>
+          <p>All brands and sizes of whole-home and business standby generators. We install the generator, the transfer switch, and the gas supply connections. Portable generator setups too.</p>
+          <ul class="detail-list">
+            <li>Generac, Kohler, Briggs &amp; Stratton</li>
+            <li>Automatic transfer switches</li>
+            <li>Gas line connections</li>
+            <li>Portable generator hookups</li>
+            <li>Load panel upgrades</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Landscape Lighting -->
+  <section class="service-detail service-detail--alt" id="lighting">
+    <div class="container">
+      <div class="detail-split detail-split--reverse">
+        <div class="detail-media reveal">
+          <Image src={landscapeLightingImg} alt="Stone house with professional landscape uplighting at twilight" width={800} height={533} loading="lazy" layout="constrained" />
+        </div>
+        <div class="detail-content reveal reveal-delay-2">
+          <span class="detail-number" aria-hidden="true">04</span>
+          <h2>Landscape Lighting</h2>
+          <p>Strategic placement of uplights, path lights, and accent fixtures that make your property look its best after sunset. Residential and commercial.</p>
+          <ul class="detail-list">
+            <li>Architectural uplighting</li>
+            <li>Path and walkway lighting</li>
+            <li>Tree and garden accent lighting</li>
+            <li>Security and motion lighting</li>
+            <li>Commercial exterior lighting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gas Fitter -->
+  <section class="service-detail" id="gas">
+    <div class="container">
+      <div class="detail-split">
+        <div class="detail-media reveal">
+          <Image src={heaterImg} alt="Pentair gas heater installation" width={800} height={533} loading="lazy" layout="constrained" />
+        </div>
+        <div class="detail-content reveal reveal-delay-2">
+          <span class="detail-number" aria-hidden="true">05</span>
+          <h2>Gas Fitter Services</h2>
+          <p>Certified for interior and underground exterior gas piping. Pool heaters, fire pits, fire bowls, generators. Currently pursuing DOT certification for gas meter work.</p>
+          <ul class="detail-list">
+            <li>Interior gas piping</li>
+            <li>Underground exterior gas lines</li>
+            <li>Pool heater gas connections</li>
+            <li>Fire feature gas supply</li>
+            <li>Generator gas connections</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Heavy Equipment Services -->
+  <section class="heavy-equipment">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="section-label">Heavy Equipment</span>
+        <h2>The tools most<br />electricians don't have.</h2>
+      </div>
+
+      <div class="heavy-grid">
+        <div class="heavy-card reveal">
+          <div class="heavy-card-img">
+            <Image src={bucketTruckImg} alt="Briggs Electric bucket truck" width={600} height={800} loading="lazy" layout="constrained" />
+          </div>
+          <h3>Bucket Truck</h3>
+          <p>Parking lot lighting, utility pole work, new high installations. We own the truck, so you're not paying a rental markup.</p>
+        </div>
+        <div class="heavy-card reveal reveal-delay-1">
+          <div class="heavy-card-img">
+            <Image src={irScanImg} alt="Thermal imaging scan" width={600} height={300} loading="lazy" layout="constrained" />
+          </div>
+          <h3>Thermal Imaging</h3>
+          <p>Infrared scanning of panels, breakers, disconnects, motors. Find problems before they become emergencies. Also used for detecting air gaps and heat loss in walls and windows.</p>
+        </div>
+        <div class="heavy-card reveal reveal-delay-2">
+          <div class="heavy-card-img">
+            <Image src={excavatorImg} alt="Yanmar excavator" width={600} height={400} loading="lazy" layout="constrained" />
+          </div>
+          <h3>Excavation</h3>
+          <p>Full excavation for electric and gas underground utilities. Our own Yanmar mini excavator. No waiting on a subcontractor.</p>
+        </div>
+        <div class="heavy-card reveal reveal-delay-3">
+          <div class="heavy-card-img">
+            <Image src={pipesUtilityImg} alt="Underground utility lines" width={600} height={300} loading="lazy" layout="constrained" />
+          </div>
+          <h3>Utility Line Tracing</h3>
+          <p>Tracing and locating electric lines, copper and PEX water lines, and gas lines. Camera inspection of sewage and rain leader piping for integrity, location, depth, and direction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="service-cta">
+    <div class="container">
+      <div class="service-cta-box reveal">
+        <h2>Need something not listed here?</h2>
+        <p>We handle residential, commercial, and industrial electrical work of all kinds. If it involves electricity, call us.</p>
+        <div class="hero-actions">
+          <a href="tel:4124984979" class="btn btn--primary">Call 412-498-4979</a>
+          <a href="/contact" class="btn btn--outline">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* ---- Page Hero ---- */
+  .page-hero {
+    padding: calc(var(--space-2xl) + 4rem) 0 var(--space-xl);
+    background: var(--black-pure);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 600;
+  }
+
+  .section-label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--electric);
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-intro {
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-intro h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+
+  /* ---- Service Detail Sections ---- */
+  .service-detail {
+    padding: var(--space-2xl) 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .service-detail--alt {
+    background: var(--surface);
+  }
+
+  .detail-split {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .detail-split--reverse {
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  .detail-split--reverse .detail-media {
+    order: 2;
+  }
+
+  .detail-split--reverse .detail-content {
+    order: 1;
+  }
+
+  .detail-media img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+
+  .detail-number {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    color: var(--surface-raised);
+    line-height: 1;
+    display: block;
+    margin-bottom: var(--space-sm);
+  }
+
+  .detail-content h2 {
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .detail-content p {
+    color: var(--text-muted);
+    margin-bottom: var(--space-md);
+    max-width: 50ch;
+  }
+
+  .detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .detail-list li {
+    position: relative;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  .detail-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 2px;
+    background: var(--electric);
+  }
+
+  @media (max-width: 768px) {
+    .detail-split,
+    .detail-split--reverse {
+      grid-template-columns: 1fr;
+    }
+
+    .detail-split--reverse .detail-media,
+    .detail-split--reverse .detail-content {
+      order: unset;
+    }
+  }
+
+  /* ---- Heavy Equipment ---- */
+  .heavy-equipment {
+    padding: var(--space-2xl) 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .heavy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .heavy-card {
+    background: var(--surface);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .heavy-card-img {
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+  }
+
+  .heavy-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.2) contrast(1.05);
+    transition: transform 0.6s var(--ease-out), filter 0.6s var(--ease-out);
+  }
+
+  .heavy-card:hover .heavy-card-img img {
+    transform: scale(1.04);
+    filter: grayscale(0) contrast(1.1);
+  }
+
+  .heavy-card h3 {
+    font-size: 1.1rem;
+    padding: var(--space-md) var(--space-md) 0.25rem;
+  }
+
+  .heavy-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 0 var(--space-md) var(--space-md);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 640px) {
+    .heavy-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ---- Service CTA ---- */
+  .service-cta {
+    padding: var(--space-2xl) 0;
+  }
+
+  .service-cta-box {
+    text-align: center;
+    padding: var(--space-xl);
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .service-cta-box h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .service-cta-box p {
+    color: var(--text-muted);
+    max-width: 45ch;
+    margin: 0 auto var(--space-lg);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

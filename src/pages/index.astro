@@ -1,0 +1,737 @@
+---
+/*
+  Design Concept: "After Dark"
+
+  Briggs Electric transforms darkness. Every hero photo — the pool glowing blue,
+  fire bowls blazing under a gazebo at dusk, landscape lighting turning a stone house
+  into a monument — is about what electricity does to a space after sunset.
+
+  Inspired by Jova Construction's dark sophistication (Awwwards SOTD), the "obsidian"
+  design trend of deep black with precise typography, and the 2026 trend of massive
+  type used as graphic elements rather than just headings.
+
+  The signature moment: The hero title "BRIGGS ELECTRIC" at enormous scale, set against
+  pure black, with a subtle electric glow animation on the word mark. As you scroll,
+  the nighttime pool photo is revealed through a clip-path expansion — like flipping
+  a switch. Darkness becomes beauty. That IS Briggs Electric.
+
+  Color strategy: Brand yellow (#f2f50f) as electric accent on near-black backgrounds.
+  Warm amber tones pulled from the firepit/gazebo dusk photography. Cool blue from
+  the pool shot used sparingly as a counterpoint.
+*/
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import davisFirepitImg from '../assets/images/davis-firepit-gazebo.jpg';
+import poolNightImg from '../assets/images/landscape-pool-night-lighting.jpg';
+import landscapeLightingImg from '../assets/images/landscape-lighting-house.png';
+import generatorImg from '../assets/images/generator.jpg';
+import truckImg from '../assets/images/truck.jpg';
+import bucketTruckImg from '../assets/images/bucket-truck.png';
+import irScanImg from '../assets/images/ir-scan.jpg';
+import excavatorImg from '../assets/images/excavator.jpg';
+import poolEquipBgImg from '../assets/images/pool-equipment-bg.jpg';
+---
+
+<Layout title="Briggs Electric | Master Electrician — Pittsburgh, PA">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Electrician",
+    "name": "Briggs Electric",
+    "url": "https://briggs-electric.keithkelly.dev",
+    "telephone": "412-498-4979",
+    "email": "briggs.electric@yahoo.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1597 Washington Pike, Suite A38-125",
+      "addressLocality": "Bridgeville",
+      "addressRegion": "PA",
+      "postalCode": "15017",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "06:00",
+      "closes": "18:00"
+    },
+    "areaServed": "Pittsburgh, PA and surrounding areas",
+    "description": "Master electrician since 2001. Swimming pools, outdoor living, generators, landscape lighting, and more.",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61556533050294",
+      "https://www.instagram.com/briggselectricpgh/"
+    ]
+  })} />
+  <!-- Hero -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-content">
+      <p class="hero-since">Master Electrician Since 2001</p>
+      <h1 class="hero-title">
+        <span class="hero-title-line">Briggs</span>
+        <span class="hero-title-line hero-title-line--accent">Electric</span>
+      </h1>
+      <p class="hero-sub">Swimming pools. Outdoor living. Generators. Landscape lighting.<br />Pittsburgh, PA and surrounding areas.</p>
+      <div class="hero-actions">
+        <a href="tel:4124984979" class="btn btn--primary">Call 412-498-4979</a>
+        <a href="/services" class="btn btn--outline">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-scroll-cue" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- Reveal Section — The signature moment -->
+  <section class="reveal-photo" id="reveal-section" aria-label="Featured work">
+    <div class="reveal-photo-inner">
+      <Image src={davisFirepitImg} alt="Outdoor living space with fire bowls and gazebo illuminated at dusk, built by Briggs Electric" width={1200} height={600} loading="eager" layout="constrained" />
+      <div class="reveal-photo-overlay">
+        <span class="reveal-photo-tag">Outdoor Living Spaces</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="what-we-do" aria-labelledby="wwd-heading">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="section-label">What We Do</span>
+        <h2 id="wwd-heading" class="section-heading">Not just wiring.<br />We build the spaces<br />you live in after dark.</h2>
+      </div>
+
+      <div class="service-grid">
+        <a href="/services#pools" class="service-card reveal reveal-delay-1">
+          <div class="service-card-img">
+            <Image src={poolNightImg} alt="Swimming pool with landscape lighting at night" width={600} height={400} loading="lazy" layout="constrained" />
+          </div>
+          <div class="service-card-body">
+            <h3>Swimming Pools &amp; Hot Tubs</h3>
+            <p>Complete pool electrical from standard installs to advanced Pentair automation systems. Gas heater connections included.</p>
+          </div>
+        </a>
+
+        <a href="/services#outdoor" class="service-card service-card--tall reveal reveal-delay-2">
+          <div class="service-card-img">
+            <Image src={landscapeLightingImg} alt="Stone house with landscape uplighting at night" width={600} height={400} loading="lazy" layout="constrained" />
+          </div>
+          <div class="service-card-body">
+            <h3>Landscape Lighting</h3>
+            <p>Make your property look its best after sunset. Strategic uplighting, path lighting, and accent lighting that transforms curb appeal.</p>
+          </div>
+        </a>
+
+        <a href="/services#generators" class="service-card reveal reveal-delay-3">
+          <div class="service-card-img">
+            <Image src={generatorImg} alt="Generac generator installation" width={600} height={400} loading="lazy" layout="constrained" />
+          </div>
+          <div class="service-card-body">
+            <h3>Generators</h3>
+            <p>Whole-home and business standby generators. All brands, all sizes. Gas supply and connections included.</p>
+          </div>
+        </a>
+
+        <a href="/services#outdoor" class="service-card reveal reveal-delay-4">
+          <div class="service-card-img">
+            <Image src={davisFirepitImg} alt="Outdoor living space with fire features" width={600} height={400} loading="lazy" layout="constrained" />
+          </div>
+          <div class="service-card-body">
+            <h3>Outdoor Living Spaces</h3>
+            <p>Custom lighting, entertainment wiring, fire features. Turn your backyard into a nighttime retreat.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="/services" class="btn btn--outline">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities Strip -->
+  <section class="capabilities" aria-label="Additional capabilities">
+    <div class="capabilities-track">
+      <div class="capabilities-scroll">
+        <span>Bucket Truck Services</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Thermal Imaging</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Excavation</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Utility Line Tracing</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Gas Fitter Services</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>EV Chargers</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Residential</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Commercial</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Industrial</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <!-- duplicate for seamless loop -->
+        <span>Bucket Truck Services</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Thermal Imaging</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Excavation</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Utility Line Tracing</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Gas Fitter Services</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>EV Chargers</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Residential</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Commercial</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+        <span>Industrial</span>
+        <span class="cap-dot" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="about-preview" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-split">
+        <div class="about-img reveal">
+          <Image src={truckImg} alt="Briggs Electric Ford 550 utility truck" width={600} height={400} loading="lazy" layout="constrained" />
+          <div class="about-img-badge">
+            <span class="about-badge-number">25+</span>
+            <span class="about-badge-text">Years Experience</span>
+          </div>
+        </div>
+        <div class="about-text reveal reveal-delay-2">
+          <span class="section-label">About</span>
+          <h2 id="about-heading">Pittsburgh born.<br />Pittsburgh raised.<br />Pittsburgh powered.</h2>
+          <p>Owned and operated by a master electrician since 2001. Licensed, certified, and equipped with the heavy machinery to handle anything from a backyard pool install to commercial utility work.</p>
+          <p>We're not a phone-answering service that sends out subcontractors. Call or text and you talk to the owner.</p>
+          <a href="/about" class="btn btn--outline">More About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipment Showcase -->
+  <section class="equipment" aria-label="Our equipment">
+    <div class="equipment-grid">
+      <div class="equipment-item reveal">
+        <Image src={bucketTruckImg} alt="Briggs Electric bucket truck in operation" width={600} height={800} loading="lazy" layout="constrained" />
+        <span class="equipment-label">Bucket Truck</span>
+      </div>
+      <div class="equipment-item reveal reveal-delay-1">
+        <Image src={irScanImg} alt="Thermal imaging scan of electrical equipment" width={600} height={300} loading="lazy" layout="constrained" />
+        <span class="equipment-label">Thermal Imaging</span>
+      </div>
+      <div class="equipment-item reveal reveal-delay-2">
+        <Image src={excavatorImg} alt="Yanmar excavator branded with Briggs Electric" width={600} height={400} loading="lazy" layout="constrained" />
+        <span class="equipment-label">Excavation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="final-cta" aria-label="Get a free quote">
+    <div class="final-cta-bg">
+      <Image src={poolEquipBgImg} alt="Pool equipment background" width={1920} height={1080} loading="lazy" layout="constrained" />
+    </div>
+    <div class="final-cta-content reveal">
+      <h2>Ready to get started?</h2>
+      <p>Call or text the owner directly for a free quote. No call centers, no runaround.</p>
+      <div class="hero-actions">
+        <a href="tel:4124984979" class="btn btn--primary">Call 412-498-4979</a>
+        <a href="/contact" class="btn btn--outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--black-pure);
+    overflow: hidden;
+  }
+
+  .hero-bg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, oklch(0.91 0.19 103 / 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    padding: var(--space-md);
+  }
+
+  .hero-since {
+    font-family: var(--font-display);
+    font-size: clamp(0.7rem, 1vw, 0.85rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+    margin-bottom: var(--space-md);
+    animation: fade-up 1s var(--ease-out) 0.2s both;
+  }
+
+  .hero-title {
+    font-size: clamp(4rem, 15vw, 14rem);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-title-line {
+    display: block;
+    animation: fade-up 1s var(--ease-out) 0.4s both;
+  }
+
+  .hero-title-line--accent {
+    color: var(--electric);
+    animation-delay: 0.6s;
+    text-shadow: 0 0 80px oklch(0.91 0.19 103 / 0.3);
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-sub {
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 42ch;
+    margin: 0 auto var(--space-lg);
+    animation: fade-up 1s var(--ease-out) 0.8s both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fade-up 1s var(--ease-out) 1s both;
+  }
+
+  .hero-scroll-cue {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fade-up 1s var(--ease-out) 1.4s both;
+  }
+
+  .hero-scroll-cue span {
+    display: block;
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--electric), transparent);
+    animation: scroll-line 2s ease-in-out infinite;
+  }
+
+  @keyframes scroll-line {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    50.1% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ---- Reveal Photo (signature moment) ---- */
+  .reveal-photo {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .reveal-photo-inner {
+    position: relative;
+    clip-path: inset(20% 15% 20% 15%);
+    transition: clip-path 1.2s var(--ease-out);
+  }
+
+  .reveal-photo-inner.expanded {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+
+  .reveal-photo-inner img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+
+  .reveal-photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-lg) var(--space-lg) var(--space-md);
+    background: linear-gradient(to top, oklch(0.08 0 0 / 0.8), transparent);
+  }
+
+  .reveal-photo-tag {
+    font-family: var(--font-display);
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--electric);
+    border: 1px solid var(--electric);
+    padding: 0.4rem 1rem;
+    display: inline-block;
+  }
+
+  /* ---- What We Do ---- */
+  .what-we-do {
+    padding: var(--space-2xl) 0;
+  }
+
+  .section-intro {
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--electric);
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-heading {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .service-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card-img {
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+  }
+
+  .service-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-out), filter 0.6s var(--ease-out);
+  }
+
+  .service-card:hover .service-card-img img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  .service-card-body {
+    padding: var(--space-md);
+    flex: 1;
+  }
+
+  .service-card-body h3 {
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+  }
+
+  .service-card:hover .service-card-body h3 {
+    color: var(--electric);
+  }
+
+  .service-card-body p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .service-card--tall {
+    grid-row: span 1;
+  }
+
+  .section-cta {
+    text-align: center;
+    margin-top: var(--space-xl);
+  }
+
+  @media (max-width: 640px) {
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ---- Capabilities Marquee ---- */
+  .capabilities {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-md) 0;
+    overflow: hidden;
+  }
+
+  .capabilities-track {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .capabilities-scroll {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+    font-family: var(--font-display);
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+  }
+
+  .cap-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--electric);
+    flex-shrink: 0;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ---- About Preview ---- */
+  .about-preview {
+    padding: var(--space-2xl) 0;
+  }
+
+  .about-split {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .about-img {
+    position: relative;
+  }
+
+  .about-img img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .about-img-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: 2rem;
+    background: var(--electric);
+    color: var(--black-pure);
+    padding: 1rem 1.5rem;
+    text-align: center;
+  }
+
+  .about-badge-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .about-badge-text {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .about-text h2 {
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    margin-bottom: var(--space-md);
+  }
+
+  .about-text p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    max-width: 50ch;
+  }
+
+  .about-text .btn {
+    margin-top: var(--space-sm);
+  }
+
+  @media (max-width: 768px) {
+    .about-split {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .about-img-badge {
+      bottom: -1rem;
+      right: 1rem;
+    }
+  }
+
+  /* ---- Equipment ---- */
+  .equipment {
+    padding: 0 0 var(--space-2xl);
+  }
+
+  .equipment-grid {
+    width: var(--container);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+  }
+
+  .equipment-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .equipment-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-out);
+    filter: grayscale(0.3) contrast(1.05);
+  }
+
+  .equipment-item:hover img {
+    transform: scale(1.06);
+    filter: grayscale(0) contrast(1.1);
+  }
+
+  .equipment-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-md) var(--space-md) var(--space-sm);
+    background: linear-gradient(to top, oklch(0.08 0 0 / 0.85), transparent);
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    .equipment-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .equipment-item img {
+      height: 260px;
+    }
+  }
+
+  /* ---- Final CTA ---- */
+  .final-cta {
+    position: relative;
+    padding: var(--space-2xl) 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+  }
+
+  .final-cta-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .final-cta-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.25) saturate(0.6);
+  }
+
+  .final-cta-content {
+    position: relative;
+    text-align: center;
+    padding: var(--space-lg);
+  }
+
+  .final-cta-content h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .final-cta-content p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 40ch;
+    margin: 0 auto var(--space-lg);
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const revealEl = document.querySelector('.reveal-photo-inner');
+    if (revealEl) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('expanded');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      io.observe(revealEl);
+    }
+  });
+</script>

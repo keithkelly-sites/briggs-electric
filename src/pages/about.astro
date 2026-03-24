@@ -1,0 +1,375 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import truckImg from '../assets/images/truck.jpg';
+import bucketTruckImg from '../assets/images/bucket-truck.png';
+import excavatorImg from '../assets/images/excavator.jpg';
+import irScanImg from '../assets/images/ir-scan.jpg';
+---
+
+<Layout title="About | Briggs Electric — Pittsburgh, PA" description="Pittsburgh born and raised master electrician since 2001. Licensed, certified, owner-operated. Meet the team and equipment behind Briggs Electric.">
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">About</span>
+      <h1>One phone call.<br />You talk to<br />the owner.</h1>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="story">
+    <div class="container">
+      <div class="story-split">
+        <div class="story-img reveal">
+          <Image src={truckImg} alt="Briggs Electric Ford 550 utility truck parked at job site" width={800} height={533} loading="lazy" layout="constrained" />
+        </div>
+        <div class="story-content reveal reveal-delay-2">
+          <h2>Master electrician since 2001</h2>
+          <p>Briggs Electric is owned and operated by a Pittsburgh born and raised master electrician with over two decades of experience. Every team member is licensed and certified, with extensive training from recognized industry associations.</p>
+          <p>We're not a dispatch service that sends whoever's available. When you call 412-498-4979, you talk to the person who's going to do the work. That's how we've operated since day one, and it's not changing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Sets Us Apart -->
+  <section class="differentiators">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="section-label">Why Briggs</span>
+        <h2>We own the equipment.<br />That matters.</h2>
+      </div>
+
+      <div class="diff-grid">
+        <div class="diff-card reveal">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Licensed &amp; Certified</h3>
+          <p>Every electrician on our team holds current licenses and certifications from recognized industry organizations. No apprentices running jobs alone.</p>
+        </div>
+
+        <div class="diff-card reveal reveal-delay-1">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Our Own Fleet</h3>
+          <p>Bucket truck, Yanmar excavator, thermal imaging equipment, utility tracing gear. We own it all. You're not paying someone else's rental markup.</p>
+        </div>
+
+        <div class="diff-card reveal reveal-delay-2">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Owner Operated</h3>
+          <p>Call or text and you reach the person making the decisions. No phone trees, no dispatchers, no subcontractors showing up at your door.</p>
+        </div>
+
+        <div class="diff-card reveal reveal-delay-3">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Full-Service</h3>
+          <p>Electrical, gas piping, excavation, utility tracing, thermal imaging. One call covers it. You don't need three different contractors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipment Gallery -->
+  <section class="equip-gallery">
+    <div class="equip-grid">
+      <div class="equip-item equip-item--wide reveal">
+        <Image src={bucketTruckImg} alt="Briggs Electric bucket truck servicing a parking lot light pole" width={600} height={800} loading="lazy" layout="constrained" />
+        <div class="equip-caption">
+          <span>Bucket Truck</span>
+        </div>
+      </div>
+      <div class="equip-item reveal reveal-delay-1">
+        <Image src={excavatorImg} alt="Yanmar excavator branded with Briggs Electric" width={600} height={400} loading="lazy" layout="constrained" />
+        <div class="equip-caption">
+          <span>Yanmar Excavator</span>
+        </div>
+      </div>
+      <div class="equip-item reveal reveal-delay-2">
+        <Image src={irScanImg} alt="Thermal imaging scan of electrical panels" width={600} height={300} loading="lazy" layout="constrained" />
+        <div class="equip-caption">
+          <span>IR Thermal Imaging</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Area -->
+  <section class="service-area">
+    <div class="container--narrow">
+      <div class="area-box reveal">
+        <span class="section-label">Service Area</span>
+        <h2>Pittsburgh and surrounding areas</h2>
+        <p>Based in Bridgeville, PA, we serve residential, commercial, and industrial customers across the greater Pittsburgh region. From the South Hills to the North Hills and everywhere in between.</p>
+        <p class="area-address">1597 Washington Pike, Suite A38-125<br />Bridgeville, PA 15017</p>
+        <div class="area-hours">
+          <span class="area-hours-label">Hours</span>
+          <span>Monday - Saturday: 6:00 AM - 6:00 PM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <div class="container">
+      <div class="about-cta-inner reveal">
+        <h2>Ready to talk?</h2>
+        <p>Call or text the owner directly. Free quotes on every project.</p>
+        <div class="hero-actions">
+          <a href="tel:4124984979" class="btn btn--primary">Call 412-498-4979</a>
+          <a href="mailto:briggs.electric@yahoo.com" class="btn btn--outline">Email Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: calc(var(--space-2xl) + 4rem) 0 var(--space-xl);
+    background: var(--black-pure);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 600;
+  }
+
+  .section-label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--electric);
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-intro {
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-intro h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+
+  /* ---- Story ---- */
+  .story {
+    padding: var(--space-2xl) 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .story-split {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .story-img img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .story-content h2 {
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    margin-bottom: var(--space-md);
+    text-transform: none;
+  }
+
+  .story-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    max-width: 50ch;
+  }
+
+  @media (max-width: 768px) {
+    .story-split {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ---- Differentiators ---- */
+  .differentiators {
+    padding: var(--space-2xl) 0;
+    background: var(--surface);
+  }
+
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .diff-card {
+    background: var(--black);
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .diff-icon {
+    color: var(--electric);
+    margin-bottom: var(--space-md);
+  }
+
+  .diff-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .diff-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 900px) {
+    .diff-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .diff-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ---- Equipment Gallery ---- */
+  .equip-gallery {
+    padding: 0;
+  }
+
+  .equip-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+  }
+
+  .equip-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .equip-item img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    filter: grayscale(0.3);
+    transition: transform 0.6s var(--ease-out), filter 0.6s var(--ease-out);
+  }
+
+  .equip-item:hover img {
+    transform: scale(1.04);
+    filter: grayscale(0);
+  }
+
+  .equip-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-lg) var(--space-md) var(--space-sm);
+    background: linear-gradient(to top, oklch(0.08 0 0 / 0.85), transparent);
+  }
+
+  .equip-caption span {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  @media (max-width: 768px) {
+    .equip-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .equip-item img {
+      height: 300px;
+    }
+  }
+
+  /* ---- Service Area ---- */
+  .service-area {
+    padding: var(--space-2xl) 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .area-box {
+    max-width: 42rem;
+  }
+
+  .area-box h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: var(--space-md);
+    text-transform: none;
+  }
+
+  .area-box p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    max-width: 55ch;
+  }
+
+  .area-address {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .area-hours {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .area-hours-label {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--electric);
+  }
+
+  /* ---- About CTA ---- */
+  .about-cta {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+
+  .about-cta-inner {
+    text-align: center;
+    padding: var(--space-xl);
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .about-cta-inner h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .about-cta-inner p {
+    color: var(--text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
